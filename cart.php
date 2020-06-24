@@ -1,8 +1,10 @@
 
 
 
-<?php include "head3.php"?>
-<body>
+<?php 
+include "head3.php"
+?>
+
 	
 
 	<section id="cart_items">
