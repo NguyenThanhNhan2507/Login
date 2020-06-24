@@ -1,359 +1,317 @@
-<?php
-	require('config-home.php');
-	$sql = $mysqli->query("SELECT * FROM cd_show  where sale = 0 ORDER BY price DESC LIMIT 8");
-	$sql_sale = $mysqli->query("SELECT * FROM cd_show where sale > 0 ORDER BY sale DESC LIMIT 4");
+<?php 
+include "head.html";
 ?>
+	
 
-<?php 
-	require('header.php');
- ?>
-<body class="top">
-		
-		<div class="main-body-color-mask"></div>
-		<div class="lightbox"></div>
-
-		<!-- BEGIN .quick-shop -->
-		
-		</div>
-		
-		<!-- BEGIN .main-body-wrapper -->
-		<div class="main-body-wrapper">
-			
-			<!-- BEGIN .main-header -->
-			<?php include('menu.php');?>
-			
-			<!-- BEGIN .main-slider -->
-			<section class="main-slider">
-			
-				<div class="paging">
-					<a href="#" class="previous"></a>
-					<a href="#" class="next"></a>
-				</div>
-				
-				<nav>
-					<span id="pager">
-					<a href="#">1</a>
-					<a href="#">2</a>
-					<a href="#">3</a>
-					<a href="#">4</a>
-					</span>
-				</nav>
-				
-				<div id="hompage-slider_content">
-					
-					<!-- BEGIN .item -->
-					<div class="item" style="background-image: url(images/slide/slider-1.jpg);">
-						<div class="title-wrapper clearfix">
-							<div class="title">
-								<p class="clearfix"><a href="#" class="headline">Little details make a big difference</a></p>
-								<p class="clearfix"><a href="#" class="intro">The important thing is not to stop questioning. Curiosity has its own reason for existing. -Albert Einstein </a></p>
-							</div>
-						</div>
-						<img src="images/blank.png" alt="" />
-					<!-- END .item -->
-					</div>
-					
-					<!-- BEGIN .item -->
-					<div class="item" style="background-image: url(images/slide/slider-2.jpg);">
-						<div class="title-wrapper clearfix">
-							<div class="title">
-								<p class="clearfix"><a href="#" class="headline">Pandora gives you more</a></p>
-								<p class="clearfix"><a href="#" class="intro">All the great things are simple, and many can be expressed in a single word: freedom, justice, honor, duty, mercy, hope. -Winston Churchill </a></p>
-							</div>
-						</div>
-						<img src="images/blank.png" alt="" />
-					<!-- END .item -->
-					</div>
-					
-					<!-- BEGIN .item -->
-					<div class="item" style="background-image: url(images/slide/slider-3.jpg);">
-						<div class="title-wrapper clearfix">
-							<div class="title">
-								<p class="clearfix"><a href="#" class="headline">Looking cool</a></p>
-								<p class="clearfix"><a href="#" class="intro">I now not with what weapons World War III will be fought, but World War IV will be fought with sticks and stones. -Albert Einstein </a></p>
-							</div>
-						</div>
-						<img src="images/blank.png" alt="" />
-					<!-- END .item -->
-					</div>
-					
-					<!-- BEGIN .item -->
-					<div class="item" style="background-image: url(images/slide/slider-4.jpg);">
-						<div class="title-wrapper clearfix">
-							<div class="title">
-								<p class="clearfix"><a href="#" class="headline">Leave a lasting impression on your customers</a></p>
-								<p class="clearfix"><a href="#" class="intro">As far as the laws of mathematics refer to reality, they are not certain, as far as they are certain, they do not refer to reality.  -Albert Einstein </a></p>
-							</div>
-						</div>
-						<img src="images/blank.png" alt="" />
-					<!-- END .item -->
-					</div>
-					
-				</div>
-				
-			<!-- END .main-slider -->
-			</section>
-			
-			<!-- BEGIN .main-content-wrapper -->
-			<section class="main-content-wrapper clearfix">
-				
-				<!-- BEGIN .welcome-message-1 -->
-				<div class="welcome-message-1">
-					<h2>Chào mừng tới <span>CD STORE</span></h2>
-					<p><b>Chất lượng && Dịch vụ chuyên nghiệp</b></p>
-					<p><b>CD STORE</b> là hệ thống bán lẻ địa CD Chất lượng cao. Với mong muốn mang đến cho những người thưởn thức âm nhạc những bản nhạc mới nhất và hót nhất, luôn được cập nhật từng ngày từng giờ. Chúng tôi hy vong chất lượng ở <strong>CD STORE</strong> sẽ làm hài lòng quý khách.</p>
-				<!-- END .welcome-message-1 -->
-				</div>
-				
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="left-sidebar">
+						<h2>Category</h2>
+						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
+							<div class="panel panel-default">
 								
-				
-				<!-- BEGIN .San pham giam gia -->
-				<div class="featured-items clearfix">
-					
-					<div class="main-title clearfix">
-						<p>Sản phẩm giảm giá</p>
-						<a href="sale.php" class="view">Xem tất cả sản phẩm</a>
-					</div>
-					
-					<div class="items clearfix">
-						<?php 
-						while($obj_sale= $sql_sale->fetch_object()){ ?>
-						<div class="item-block-1">
-							<span class="tag-sale"></span>
-							<div class="image-wrapper">
-								<div class="image">
-									<div class="overlay">
-										<div class="position">
-											<div>
-												<p><?php echo $obj_sale->description?></p>
-												<a href="item.php?id=<?php echo $obj_sale->id?>" class="quickshop1">Quick shop</a>
-											</div>
-										</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordian" href="#mens">
+											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+											Mens
+										</a>
+									</h4>
+								</div>
+								<div id="mens" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><a href="#">Armani</a></li>
+											<li><a href="#">Prada</a></li>
+											<li><a href="#">Dolce and Gabbana</a></li>
+									
+										</ul>
 									</div>
-									<a href="item.php?id=<?php echo $obj_sale->id?>"><img src="images/photos/image-<?php echo $obj_sale->id?>.jpg" style="margin: -27.5px 0 0 0;" alt="" /></a>
 								</div>
 							</div>
-							<h2><a href="item.php?id=<?php echo $obj_sale->id?>"><?php echo $obj_sale->name?></a></h2>
-							<h6><center><?php echo $obj_sale->singer?></center></h6><br>
-							<p class="price"><?php echo (($obj_sale->price * (100- $obj_sale->sale))/100)?> VNĐ <s><?php echo $obj_sale->price?> VNĐ</s></p>
-						</div>
-						<?php }?>
+							
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordian" href="#womens">
+											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+											Womens
+										</a>
+									</h4>
+								</div>
+								<div id="womens" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><a href="#">Fendi</a></li>
+											<li><a href="#">Guess</a></li>
+											<li><a href="#">Valentino</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							
+						</div><!--/category-products-->
+					
+						<div class="brands_products"><!--brands_products-->
+							<h2>Brands</h2>
+							<div class="brands-name">
+								<ul class="nav nav-pills nav-stacked">
+									<li><a href="#"> <span class="pull-right">(50)</span>Acne</a></li>
+									<li><a href="#"> <span class="pull-right">(56)</span>Grüne Erde</a></li>
+									<li><a href="#"> <span class="pull-right">(27)</span>Albiro</a></li>
+								</ul>
+							</div>
+						</div><!--/brands_products-->
 						
 						
+						<div class="shipping text-center"><!--shipping-->
+							<img src="images/home/shipping.jpg" alt="" />
+						</div><!--/shipping-->
+					
 					</div>
-
-				<!-- END .San pham giam gia -->
 				</div>
 				
-				<!-- BEGIN .featured-items -->
-				<div class="featured-items clearfix">
-					
-					<div class="main-title clearfix">
-						<p>Sản phẩm mới</p>
-						<a href="views.php" class="view">Xem tất cả sản phẩm</a>
-					</div>
-					
-					<div class="items clearfix">
-						<?php 
-						while($obj= $sql->fetch_object()){ ?>
-						<div class="item-block-1">
-							<div class="image-wrapper">
-								<div class="image">
-									<div class="overlay">
-										<div class="position">
-											<div>
-												<p><?php echo $obj->description?></p>
-												<a href="item.php?id=<?php echo $obj->id?>" class="quickshop1">Quick shop</a>
+				<div class="col-sm-9 padding-right">
+					<div class="features_items"><!--features_items-->
+						<h2 class="title text-center">Features Items</h2>
+						
+						
+						<!--PRODUCT 1-->
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+										<div class="productinfo text-center">
+				<form name="menfrm" action="login.php" method="post">
+										
+				<img src="images/mens/1001.jpg" height="240" alt="" />
+											<h2>RS.450</h2>
+											<p>Easy Polo Black Edition</p>
+										</div>
+				<div class="product-overlay">
+		<div class="overlay-content">
+												<h2>RS.450</h2>
+												<p>Easy Polo Black Edition</p>
+					<input type="hidden" name="pid" value="1001" />
+<input type="Submit" name="Submit" value="Add to cart" class="btn btn-default add-to-cart"></a></form>
 											</div>
 										</div>
+								</div>
+								
+							</div>
+						</div>
+						
+						
+						<!--PRODUCT 2-->
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+										<div class="productinfo text-center">
+				<form name="menfrm" action="login.php" method="post">
+										
+				<img src="images/mens/1002.jpg" height="240" alt="" />
+											<h2>RS.766</h2>
+											<p>Superman Black Edition</p>
+										</div>
+				<div class="product-overlay">
+		<div class="overlay-content">
+												<h2>RS.766</h2>
+												<p>Superman Black Edition</p>
+					<input type="hidden" name="pid" value="1002" />
+<input type="Submit" name="Submit" value="Add to cart" class="btn btn-default add-to-cart"></a></form>
+											</div>
+										</div>
+								</div>
+								
+							</div>
+						</div>
+				
+				
+				<!--product 3-->
+                <div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+										<div class="productinfo text-center">
+				<form name="menfrm" action="login.php" method="post">
+										
+				<img src="images/mens/1003.jpg" height="240" alt="" />
+											<h2>RS.450</h2>
+											<p>Easy Polo Black Edition</p>
+										</div>
+				<div class="product-overlay">
+		<div class="overlay-content">
+												<h2>RS.450</h2>
+												<p>Easy Polo Black Edition</p>
+					<input type="hidden" name="pid" value="1003" />
+<input type="Submit" name="Submit" value="Add to cart" class="btn btn-default add-to-cart"></a></form>
+											</div>
+										</div>
+								</div>
+								
+							</div>
+						</div>
+						
+						
+						<!--product 4-->
+            <div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+										<div class="productinfo text-center">
+				<form name="menfrm" action="login.php" method="post">
+										
+				<img src="images/women/2001.jpg" height="240" alt="" />
+											<h2>RS.1000</h2>
+											<p>Dress</p>
+										</div>
+				<div class="product-overlay">
+		<div class="overlay-content">
+												<h2>RS.1000</h2>
+												<p>Dress</p>
+					<input type="hidden" name="pid" value="1004" />
+<input type="Submit" name="Submit" value="Add to cart" class="btn btn-default add-to-cart"></a></form>
+											</div>
+										</div>
+								</div>
+								
+							</div>
+						</div>
+						
+						
+						<!--product 5-->
+                            <div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+										<div class="productinfo text-center">
+				<form name="menfrm" action="login.php" method="post">
+										
+				<img src="images/women/2002.jpg" height="240" alt="" />
+											<h2>RS.1500</h2>
+											<p>Dress</p>
+										</div>
+				<div class="product-overlay">
+		<div class="overlay-content">
+												<h2>RS.1500</h2>
+												<p>Dress</p>
+					<input type="hidden" name="pid" value="2002" />
+<input type="Submit" name="Submit" value="Add to cart" class="btn btn-default add-to-cart"></a></form>
+											</div>
+										</div>
+								</div>
+								
+							</div>
+						</div>
+						
+						
+						<!--product 6-->
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+										<div class="productinfo text-center">
+				<form name="menfrm" action="login.php" method="post">
+										
+				<img src="images/women/2003.jpg" height="240" alt="" />
+											<h2>RS.1200</h2>
+											<p>Dress</p>
+										</div>
+				<div class="product-overlay">
+		<div class="overlay-content">
+												<h2>RS.1200</h2>
+												<p>Dress</p>
+					<input type="hidden" name="pid" value="1006" />
+<input type="Submit" name="Submit" value="Add to cart" class="btn btn-default add-to-cart"></a></form>
+											</div>
+										</div>
+								</div>
+								
+							</div>
+						</div>
+						
+					</div><
+					
+					
+					
+					!--features_items-->
+					
+                        <!--category-tab-->
+					<div class="category-tab">
+						<div class="col-sm-12">
+							<ul class="nav nav-tabs">
+								<li class="active"><a href="#tshirt" data-toggle="tab">New</a></li>
+							</ul>
+						</div>
+						<div class="tab-content">
+							<div class="tab-pane fade active in" id="tshirt" >
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="images/mens/1001.jpg" alt="" />
+												<h2>RS.450</h2>
+												<p>Tshirt</p>
+												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											</div>
+											
+										</div>
 									</div>
-									<a href="item.php?id=<?php echo $obj->id?>"><img src="images/photos/image-<?php echo $obj->id?>.jpg" style="margin: -27.5px 0 0 0;" alt="" /></a>
+								</div>
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="images/women/2004.jpg" alt="" />
+												<h2>RS.1500</h2>
+												<p>Dress</p>
+												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											</div>
+											
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="images/women/2003.jpg" alt="" />
+												<h2>RS.450</h2>
+												<p>Tshirt</p>
+												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											</div>
+											
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="images/mens/1005.jpg" alt="" />
+												<h2>RS.1200</h2>
+												<p>Dress</p>
+												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											</div>
+											
+										</div>
+									</div>
 								</div>
 							</div>
-							<h2><a href="item.php?id=<?php echo $obj->id?>"><?php echo $obj->name?></a></h2>
-							<h6><center><?php echo $obj->singer?></center></h6><br>
-							<p class="price"><?php echo $obj->price?> VNĐ</p>
-						</div>
-						<?php }?>
-						
-						
-					</div>
-
-				<!-- END .featured-items -->
+							
+							
+							
+							
+							
+					</div><!--/category-tab-->
+					
+                   
+					
 				</div>
-
-				
-				<!-- BEGIN .special-offers -->
-				<div class="special-offers clearfix">
-					
-					<div class="main-title clearfix">
-						<p>Ưu đãi đặc biệt</p>
-					</div>
-					
-					<a href="#" class="sale">
-						<span class="title">Sale</span>
-						<span class="description">Giảm giá tất cả các mặt hàng</span>
-						<span class="background"></span>
-					</a>
-					
-					<a href="#" class="percent-off">
-						<span class="title">FREE</span>
-						<span class="description">Miễn phí vận chuyển</span>
-						<span class="background"></span>
-					</a>
-					
-					<a href="#" class="specials">
-						<span class="title">Mới</span>
-						<span class="description">Luôn cập nhật những CD mới nhất</span>
-						<span class="background"></span>
-					</a>
-				
-				<!-- END .special-offers -->
-				</div>
-				
-				<!-- BEGIN .homepage-columns -->
-				<div class="homepage-columns clearfix">
-					
-					<div class="blog">
-					
-						<div class="main-title clearfix">
-							<p>Latest from news blog</p>
-						</div>
-						
-						<div class="items">
-						
-							<div class="item">
-								<h2><a href="#">Praesent feugiat felis congue nulla dapibus</a></h2>
-								<div class="title-details">
-									<a href="#" class="time">May 23, 2012</a>
-									<a href="#" class="comments">6</a>
-								</div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae nibh risus. Morbi dapibus lectus at erat viverra malesuada. Phasellus congue nulla. <a href="#" class="more-link">Read more <b>+</b></a></p>
-							</div>
-							
-							<div class="item">
-								<h2><a href="#">Aliquam feugiat imperdiet orcinon mattis</a></h2>
-								<div class="title-details">
-									<a href="#" class="time">May 15, 2012</a>
-									<a href="#" class="comments">12</a>
-								</div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum risus vitae aliquet libero volutpat. Integer viverra tempus dolor condimentum euismod leo feugiat. <a href="#" class="more-link">Read more <b>+</b></a></p>
-							</div>
-							
-							<div class="item">
-								<h2><a href="#">Consectetur adipiscing etiamts adipiscing</a></h2>
-								<div class="title-details">
-									<a href="#" class="time">May 11, 2012</a>
-									<a href="#" class="comments">0</a>
-								</div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae nibh risus. Morbi malesuada. Phasellus congue nulla eu turpis. Nam risus ligula. <a href="#" class="more-link">Read more <b>+</b></a></p>
-							</div>
-							
-						</div>
-						
-					</div>
-					
-					<!-- BEGIN .best-sellers -->
-					<div class="best-sellers">
-					
-						<div class="main-title clearfix">
-							<p>CD Bán chạy</p>
-						</div>
-						
-						<div class="items">
-						
-							<div class="item-block-1">
-								<span class="tag-sale"></span>
-								<div class="image-wrapper">
-									<div class="image">
-										<div class="overlay">
-											<div class="position">
-												<div>
-													<a href="item.php?id=10" class="view">Xem thêm</a>
-												</div>
-											</div>
-										</div>
-										<a href="#"><img src="images/photos/photo-10.jpg" style="margin: -10px 0 0 0;" alt="" /></a>
-									</div>
-								</div>
-								<p class="price">90k VNĐ</p>
-							</div>
-						
-							<div class="item-block-1">
-								<div class="image-wrapper">
-									<div class="image">
-										<div class="overlay">
-											<div class="position">
-												<div>
-													<a href="item.php?id=17" class="view">Xem thêm</a>
-												</div>
-											</div>
-										</div>
-										<a href="#"><img src="images/photos/photo-17.jpg" style="margin: -30px 0 0 0;" alt="" /></a>
-									</div>
-								</div>
-								<p class="price">50k VNĐ</p>
-							</div>
-							
-							<div class="item-block-1">
-								<div class="image-wrapper">
-									<div class="image">
-										<div class="overlay">
-											<div class="position">
-												<div>
-													<a href="item.php?id=5" class="view">Xem thêm</a>
-												</div>
-											</div>
-										</div>
-										<a href="#"><img src="images/photos/photo-5.jpg" style="margin: -30px 0 0 0;" alt="" /></a>
-									</div>
-								</div>
-								<p class="price">100k VNĐ</p>
-							</div>
-							
-							<div class="item-block-1">
-								<div class="image-wrapper">
-									<div class="image">
-										<div class="overlay">
-											<div class="position">
-												<div>
-													<a href="item.php?id=22" class="view">Xem thêm</a>
-												</div>
-											</div>
-										</div>
-										<a href="#"><img src="images/photos/photo-22.jpg" style="margin: -10px 0 0 0;" alt="" /></a>
-									</div>
-								</div>
-								<p class="price">80k VNĐ</p>
-							</div>
-						
-						</div>
-					
-					<!-- END .best-sellers -->	
-					</div>
-					
-					<!-- BEGIN .about-us -->
-					<div class="about-us">
-					
-						<div class="main-title clearfix">
-							<p>Thông tin liên hệ</p>
-						</div>
-						
-						<p>Mecenas quis porta in, condimentum  eget arcu. Fringilla aliquam ultricies pellente sque vel turpis nec leo tincidunt sollicitudin ac non risus. Ves tibu lum ultrices feugiat velit, quis tincidunt velit volutpat nec. Vivamus pharetra fringilla augue, elementum ante ultrices tincidunt. Aenean consequat tincidunt.</p>
-						<p>Quisque scelerisque augue eu turpis condimentum iaculis. Cras adipiscing lobortis convallis. Nam eu augue lorem.</p>
-						<a href="#" class="phone">(84)-963-012-472</a>
-						<a href="#" class="email">support@cdstore.com</a>
-					
-					<!-- END .about-us -->	
-					</div>
-					
-				<!-- END .homepage-columns -->
-				</div>
-				
-			<!-- END .main-content-wrapper -->
-			</section>
+			</div>
+		</div>
+	</section>
 	
+	<?php
 	
-<?php 
-	require('footer.php');
- ?>
+	include "foot.html";
+	?>

@@ -1,77 +1,40 @@
-
-<?php 
-	include('header.php');
- ?>
-	<!-- BEGIN body -->
-<body class="top">
-		
-		<div class="main-body-color-mask"></div>
-		<div class="lightbox"></div>
-
-		<!-- BEGIN .quick-shop -->
-		
-		</div>
-		
-		<!-- BEGIN .main-body-wrapper -->
-		<div class="main-body-wrapper">
-			
-			<!-- BEGIN .main-header -->
-			<?php include('menu.php');?>
-			<!-- BEGIN .main-navigation -->
-			<section class="main-navigation clearfix">
-				<nav>
-					<div class="navigation">
-						<a href="#">Home</a>
-					</div>
-					<div class="title">
-						<h4>Đăng nhập</h4>
-					</div>
-				</nav>
-			<!-- END .main-navigation -->
-			</section>
-			
-			<!-- BEGIN .main-content-wrapper -->
-			<section class="main-content-wrapper clearfix">
-				
-				<!-- BEGIN .single-full-width -->
-				<section class="single-full-width clearfix">
-					
-					<!-- BEGIN .main-login -->
-					<div class="main-login">
-						<form action="checklogin.php" class="login" method="post">
-							<p>
-								<label>Tài khoản:</label>
-								<input name="log_username" type="text" />
-							</p>
-							<p>
-								<label>Mật khẩu:</label>
-								<input name="log_password" type="password" />
-							</p>
-							<p>
-								<label></label>
-								<a href="forgot-password.php">Quên mật khẩu?</a>
-							</p>
-							<p class="sign-in">
-								<label></label>
-								<button name="log_submit" type="submit">Đăng nhập</button>
-								<b>or <a href="index.php">Quay lại cửa hàng</a></b>
-							</p>
+<?php
+include "head.html";
+?>	
+	<section id="form"><!--form-->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4 col-sm-offset-1">
+					<div class="login-form"><!--login form-->
+						<h2>Login to your account</h2>
+						<form action="log.php" name="login" method="post">
+							<input type="text" placeholder="Name" name="username"/>
+							<input type="password" placeholder="Password" name="password" />
+							
+							<button type="submit" class="btn btn-default">Login</button>
 						</form>
-					<!-- END .main-login -->
-					</div>
-					
-					<!-- BEGIN .guest-login -->
-					<div class="guest-login">
-						<h3>Khách hàng mới</h3>
-						<a href="index.php"><button>Continue as guest</button></a>
-					<!-- END .guest-login -->
-					</div>
-				
-				<!-- END .single-full-width -->
-				</section>
-
-			<!-- END .main-content-wrapper -->
-			</section>
-<?php 
-	include('footer.php');
- ?>
+					</div><!--/login form-->
+				</div>
+				<div class="col-sm-1">
+					<h2 class="or">OR</h2>
+				</div>
+				<div class="col-sm-4">
+					<div class="signup-form"><!--sign up form-->
+					<form name="reg" action="reg.php" method="post">
+						<h2>New User Signup!</h2>
+							<input type="text"  name="username" placeholder="Name"/>
+							<input type="password"  name="password" placeholder="Password"/>
+							<input type="email" name="email" placeholder="Email Address"/>
+							<input type="text" placeholder="Mobile Number" name="mobile"/>
+							<input type="textarea" placeholder="Your Address" name="address"/>
+							<button type="submit" class="btn btn-default">Signup</button>
+						</form>
+					</div><!--/sign up form-->
+				</div>
+			</div>
+		</div>
+	</section><!--/form-->
+	<?php
+	
+	include "foot.html";
+	?>

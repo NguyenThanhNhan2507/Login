@@ -1,5 +1,7 @@
-<?php
-	session_start();
-	session_destroy();
-	header('Refresh:0; url=index.php');
-?>
+   <?php
+ session_start();
+ session_destroy();
+header('Location:index.php');
+  echo "successfuly logout";
+
+ ?>
