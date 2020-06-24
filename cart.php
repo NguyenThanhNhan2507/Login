@@ -1,35 +1,4 @@
-<?php
-session_start();
 
-$x=$_POST['cartid'];
-
-$host="localhost";
-$user="root";
-$pass="root";
-$con = mysql_connect("$host","$user","$pass");
-
-mysql_select_db("eshopper", $con);
-if (!$con)
-  {
-
-echo "Error in DBConnect() = " . mssql_get_last_message();
-  die('Could not connect: ' . mysql_error());
-
-  }
-
-$sql="select * from product where pid=$x";
-$result = mysql_query($sql) or die("cannot execute query");
-
- $count = mysql_num_rows($result);
-$row = mysql_fetch_array($result);
-
-	$pname = $row['pname'];
-	$cart = $row['pid'];
-
- $bname = $row['brand'];
-
- $price = $row['price'];
-?>
 
 
 <?php include "head3.php"?>
